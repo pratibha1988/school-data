@@ -23,7 +23,7 @@ def print_counts():
     count_by_city = count_all[2]
     count_by_metro_locale = count_all[3]
 
-    print("The total number of school is {}".format(total_count))
+    print("The total number of unique school is {}".format(total_count))
     print("The total number of school by state is {}".format(dict(count_by_state)))
     # print("the total number of schools per city is {}".format(dict(count_by_city)))
     print("Unique cities have at least one school is {}".format(len(count_by_city)))
@@ -55,6 +55,8 @@ class school:
         :return: return the total count
         it will return total count to filelines-1 as first line is header
         '''
+        count = sum(1 for row in data_file)
+        print("Total Schools: {}".format(count))
         school_dict = {}
         for l in data_file:
             if l not in school_dict:
